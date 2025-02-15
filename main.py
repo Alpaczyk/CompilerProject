@@ -86,5 +86,25 @@ class CalculatorTests(unittest.TestCase):
     def test_with_brackets_2(self):
         self.assertEqual((41 + 1) * (4 - 7) / 2, parse('(41+1)*(4-7)/2'))
 
+    def test_big_adding(self):
+        self.assertEqual(4100000 + 100000, parse('4100000+100000'))
+
+    def test_big_sub(self):
+        self.assertEqual(4100000 - 100000, parse('4100000-100000'))
+
+    def test_big_mul(self):
+        self.assertEqual(4100000 * 100000, parse('4100000*100000'))
+
+    def test_big_div(self):
+        self.assertEqual(4100000 / 100000, parse('4100000/100000'))
+
+    def test_literal(self):
+        self.assertEqual(42, parse('42'))
+
+    def test_literal_minus(self):
+        self.assertEqual(-42, parse('-42'))
+
+
+
 
 
